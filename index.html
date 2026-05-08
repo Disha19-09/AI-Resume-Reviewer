@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Reviewer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-text">Resume<em>Review</em></span>
+    </div>
+    <div class="header-right">
+      <span class="ai-badge">Powered by Gemini</span>
+      <button class="theme-toggle" id="themeBtn">
+        <span id="themeLabel">Dark mode</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <div class="left-panel">
+
+      <div class="hero-text">
+        <h1>Get honest<br/><em>resume feedback</em></h1>
+        <p>Upload your resume and receive thoughtful, structured feedback — like having a career coach in your corner.</p>
+      </div>
+
+      <div class="upload-card">
+        <div class="card-label">Your resume</div>
+
+        <div class="upload-zone" id="uploadBox">
+          <div class="upload-zone-icon">
+            <h1>📤</h1>
+          </div>
+          <h3 id="uploadTitle">Drop your file here</h3>
+          <p>PDF or TXT · click to browse</p>
+        </div>
+
+        <input type="file" id="resumeInput" accept=".txt,.pdf" />
+
+        <div class="file-selected" id="fileChip">
+          <div class="file-dot"></div>
+          <span class="file-selected-name" id="fileName"></span>
+          <button class="remove-file" id="removeFile" title="Remove file">×</button>
+        </div>
+
+        <button class="btn-primary" id="reviewBtn" disabled>Analyse my resume</button>
+      </div>
+
+      <div class="perks">
+        <div class="perk">
+          <div class="perk-icon">⚡</div>
+          <span>Feedback in seconds, not days</span>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">🎯</div>
+          <span>Clear, structured critique</span>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">🔒</div>
+          <span>Your file is never stored</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right-panel">
+
+      <div class="empty-state" id="emptyState">
+        <div class="empty-illustration">
+          <div class="empty-paper"></div>
+          <div class="empty-badge">✦</div>
+        </div>
+        <h3>Your feedback will appear here</h3>
+        <p>Upload your resume on the left and we'll walk you through what's working and what to improve.</p>
+        <div class="empty-hints">
+          <span class="hint-chip">Formatting tips</span>
+          <span class="hint-chip">Content gaps</span>
+          <span class="hint-chip">Impact language</span>
+          <span class="hint-chip">ATS readiness</span>
+        </div>
+      </div>
+
+      <div class="loading-state" id="loadingState">
+        <div class="loading-ring"></div>
+        <p>Reading through your resume…</p>
+      </div>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-header">
+          <div>
+            <div class="result-header-label">AI feedback</div>
+            <div class="result-file-name" id="resumeName">Your Resume</div>
+          </div>
+          <div class="done-badge">Review complete ✓</div>
+        </div>
+        <div class="feedback-scroll">
+          <div id="feedbackText"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
